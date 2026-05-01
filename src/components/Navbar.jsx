@@ -18,7 +18,8 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Contact', path: '/contact' },
+    { name: 'Book Now', path: '/booking', highlight: true }
   ];
 
   return (
@@ -64,26 +65,30 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? 'text-medical-600'
-                      : 'text-gray-700 hover:text-medical-600'
-                  }`}
-                >
-                  {link.name}
-                </Link>
+                link.highlight ? (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className="bg-medical-600 hover:bg-medical-700 text-white px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`font-medium transition-colors ${
+                      location.pathname === link.path
+                        ? 'text-medical-600'
+                        : 'text-gray-700 hover:text-medical-600'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
-              <a
-                href={`tel:${clinicInfo.contact.mobile}`}
-                className="btn-primary"
-              >
-                Book Appointment
-              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -101,25 +106,30 @@ const Navbar = () => {
           <div className="md:hidden bg-white border-t">
             <div className="container-custom py-4 space-y-4">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block py-2 font-medium ${
-                    location.pathname === link.path
-                      ? 'text-medical-600'
-                      : 'text-gray-700'
-                  }`}
-                >
-                  {link.name}
-                </Link>
+                link.highlight ? (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className="btn-primary block text-center"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`block py-2 font-medium ${
+                      location.pathname === link.path
+                        ? 'text-medical-600'
+                        : 'text-gray-700'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
-              <a
-                href={`tel:${clinicInfo.contact.mobile}`}
-                className="btn-primary block text-center"
-              >
-                Book Appointment
-              </a>
             </div>
           </div>
         )}

@@ -12,6 +12,15 @@ const Hero = () => {
 
   return (
     <section className="relative gradient-bg overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: 'url(https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      ></div>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-medical-400 rounded-full blur-3xl"></div>

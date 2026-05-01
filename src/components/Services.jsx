@@ -19,6 +19,29 @@ const iconMap = {
   stethoscope: Stethoscope
 };
 
+const serviceImages = {
+  'Orthopaedic Physiotherapy': 'https://th.bing.com/th/id/OIP.iNMXGJMvVyZeq_I6MeR3ewHaEq?w=290&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
+  'Neuro Physiotherapy': 'https://resalahphysio.com/wp-content/uploads/2023/07/image_50394881-2048x1536.jpg',
+  'Cardiovascular & Pulmonary': 'https://www.thoughtco.com/thmb/9gogytcZZpPql39K9EUVaegurbA=/1500x997/filters:fill(auto,1)/circulatory_system-56e73fe45f9b5854a9f962fc.jpg',
+  'Sports Physiotherapy': 'https://images.pexels.com/photos/5794060/pexels-photo-5794060.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'Pain Management': 'https://images.pexels.com/photos/6129049/pexels-photo-6129049.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'Paediatric & Developmental': 'https://th.bing.com/th/id/OIP.3c4hOtKzmSU7mMb_ZZvAOQHaFj?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3'
+};
+
+// Fallback placeholder generator
+const getPlaceholderImage = (text, color) => {
+  return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23${color}' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='white' font-size='32' font-family='Arial'%3E${encodeURIComponent(text)}%3C/text%3E%3C/svg%3E`;
+};
+
+const servicePlaceholders = {
+  'Orthopaedic Physiotherapy': getPlaceholderImage('Orthopaedic', '0284c7'),
+  'Neuro Physiotherapy': getPlaceholderImage('Neuro', '0369a1'),
+  'Cardiovascular & Pulmonary': getPlaceholderImage('Cardio', '0891b2'),
+  'Sports Physiotherapy': getPlaceholderImage('Sports', '06b6d4'),
+  'Pain Management': getPlaceholderImage('Pain Mgmt', '0284c7'),
+  'Paediatric & Developmental': getPlaceholderImage('Paediatric', '0369a1')
+};
+
 const Services = () => {
   return (
     <section className="section-padding bg-white">
@@ -53,8 +76,19 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="card group hover:border-medical-200 border-2 border-transparent"
+                  className="card group hover:border-medical-200 border-2 border-transparent overflow-hidden"
                 >
+                  <img 
+                    src={serviceImages[service.category]}
+                    alt={service.category}
+                    className="w-full h-48 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    crossOrigin="anonymous"
+                    onError={(e) => {
+                      console.log('Image failed, using placeholder:', service.category);
+                      e.target.src = servicePlaceholders[service.category];
+                    }}
+                  />
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 bg-medical-100 rounded-lg flex items-center justify-center group-hover:bg-medical-600 transition-colors">
                       <Icon className="text-medical-600 group-hover:text-white transition-colors" size={24} />
