@@ -18,7 +18,7 @@ const iconMap = {
 
 const WhyChooseUs = () => {
   return (
-    <section className="section-padding gradient-bg">
+    <section className="section-padding gradient-bg-2">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ const WhyChooseUs = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Why Choose <span className="text-gradient">Soni Physiotherapy?</span>
+            Why Choose <span className="text-gradient-3">Soni Physiotherapy?</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Experience the difference of doctor-led, compassionate care with over a decade of excellence
@@ -44,7 +44,7 @@ const WhyChooseUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                className="glass-card-blue rounded-xl p-6 hover:shadow-2xl transition-all duration-300 group"
               >
                 <div className="w-14 h-14 bg-medical-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-medical-600 transition-colors">
                   <Icon className="text-medical-600 group-hover:text-white transition-colors" size={28} />
@@ -61,7 +61,7 @@ const WhyChooseUs = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 bg-white rounded-2xl p-8 shadow-xl"
+          className="mt-12 glass-card rounded-2xl p-8"
         >
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>

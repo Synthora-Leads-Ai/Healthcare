@@ -7,14 +7,14 @@ const BookingPage = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="gradient-bg py-16">
+      <section className="gradient-bg-4 py-16">
         <div className="container-custom text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
           >
-            Book Your <span className="text-gradient">Appointment</span>
+            Book Your <span className="text-gradient-2">Appointment</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -163,7 +163,7 @@ const BookingPage = () => {
       </section>
 
       {/* Why Book With Us */}
-      <section className="section-padding gradient-bg">
+      <section className="section-padding gradient-bg-3">
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Why Book With Us?

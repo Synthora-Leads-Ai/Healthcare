@@ -4,7 +4,7 @@ import { clinicInfo } from '../config/clinicInfo';
 
 const Contact = () => {
   return (
-    <section className="section-padding gradient-bg">
+    <section className="section-padding gradient-bg-3">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,7 +13,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Get In <span className="text-gradient">Touch</span>
+            Get In <span className="text-gradient-3">Touch</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Book your appointment today or reach out for home healthcare services
@@ -29,7 +29,7 @@ const Contact = () => {
             className="space-y-6"
           >
             {/* Phone */}
-            <div className="bg-white rounded-xl p-6 shadow-lg">
+            <div className="glass-card-blue rounded-xl p-6">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-medical-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="text-medical-600" size={24} />
@@ -56,7 +56,7 @@ const Contact = () => {
             </div>
 
             {/* WhatsApp */}
-            <div className="bg-white rounded-xl p-6 shadow-lg">
+            <div className="glass-card-blue rounded-xl p-6">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MessageCircle className="text-green-600" size={24} />
@@ -77,7 +77,7 @@ const Contact = () => {
             </div>
 
             {/* Email */}
-            <div className="bg-white rounded-xl p-6 shadow-lg">
+            <div className="glass-card-blue rounded-xl p-6">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-medical-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="text-medical-600" size={24} />

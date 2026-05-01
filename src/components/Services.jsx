@@ -63,7 +63,7 @@ const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our <span className="text-gradient">Services</span>
+            Our <span className="text-gradient-2">Services</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Comprehensive physiotherapy and home healthcare services tailored to your needs
@@ -85,7 +85,7 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="card group hover:border-medical-200 border-2 border-transparent overflow-hidden"
+                  className="glass-card-blue group hover:shadow-2xl border-2 border-transparent hover:border-medical-200 overflow-hidden rounded-xl p-6"
                 >
                   <img 
                     src={serviceImages[service.category]}
@@ -137,7 +137,7 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="card group hover:border-cyan-200 border-2 border-transparent overflow-hidden"
+                  className="glass-card group hover:border-cyan-200 border-2 border-transparent overflow-hidden rounded-xl p-6"
                 >
                   <img 
                     src={homeHealthcareImages[service.title]}

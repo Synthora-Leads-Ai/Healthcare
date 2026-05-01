@@ -51,14 +51,14 @@ const GalleryPage = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="gradient-bg py-16">
+      <section className="gradient-bg-2 py-16">
         <div className="container-custom text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
           >
-            Our <span className="text-gradient">Gallery</span>
+            Our <span className="text-gradient-3">Gallery</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ const GalleryPage = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white mesh-overlay">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map((image, index) => (
@@ -82,7 +82,7 @@ const GalleryPage = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="relative group cursor-pointer overflow-hidden rounded-xl glass-card hover:shadow-2xl transition-all duration-300"
                 onClick={() => setSelectedImage(image)}
               >
                 <img
@@ -142,7 +142,7 @@ const GalleryPage = () => {
       )}
 
       {/* CTA Section */}
-      <section className="section-padding gradient-bg">
+      <section className="section-padding gradient-bg-4">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -46,14 +46,14 @@ const ServicesPage = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="gradient-bg py-16">
+      <section className="gradient-bg-2 py-16">
         <div className="container-custom text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
           >
-            Our <span className="text-gradient">Services</span>
+            Our <span className="text-gradient-2">Services</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -67,7 +67,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Physiotherapy Services */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white mesh-overlay">
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
             Physiotherapy Services
@@ -82,7 +82,7 @@ const ServicesPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="card overflow-hidden"
+                  className="glass-card-blue overflow-hidden rounded-xl"
                 >
                   <img 
                     src={serviceImages[service.category]}
@@ -115,7 +115,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Home Healthcare Services */}
-      <section className="section-padding gradient-bg">
+      <section className="section-padding gradient-bg-3">
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
             Home Healthcare Services
@@ -130,7 +130,7 @@ const ServicesPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                  className="glass-card overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                 >
                   <img 
                     src={homeHealthcareImages[service.title]}
@@ -186,7 +186,7 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding gradient-bg">
+      <section className="section-padding gradient-bg-4">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -44,8 +44,87 @@
     @apply bg-gradient-to-br from-medical-50 via-blue-50 to-cyan-50;
   }
 
+  /* Mesh Gradient Backgrounds */
+  .gradient-bg-2 {
+    background: radial-gradient(at 20% 30%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 70%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(2, 132, 199, 0.1) 0px, transparent 50%),
+                linear-gradient(135deg, #f0f9ff 0%, #ecfeff 50%, #f0fdfa 100%);
+  }
+
+  .gradient-bg-3 {
+    background: radial-gradient(at 70% 20%, rgba(14, 165, 233, 0.2) 0px, transparent 50%),
+                radial-gradient(at 30% 80%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
+                radial-gradient(at 90% 90%, rgba(2, 132, 199, 0.1) 0px, transparent 50%),
+                linear-gradient(225deg, #ecfeff 0%, #f0f9ff 50%, #e0f2fe 100%);
+  }
+
+  .gradient-bg-4 {
+    background: radial-gradient(at 40% 60%, rgba(6, 182, 212, 0.25) 0px, transparent 50%),
+                radial-gradient(at 60% 40%, rgba(14, 165, 233, 0.2) 0px, transparent 50%),
+                linear-gradient(180deg, #dbeafe 0%, #cffafe 50%, #e0f2fe 100%);
+  }
+
+  /* Glassmorphism Effects */
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl;
+  }
+
+  .glass-card-blue {
+    background: rgba(240, 249, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.15);
+  }
+
+  /* Text Gradients */
   .text-gradient {
     @apply bg-gradient-to-r from-medical-600 to-cyan-600 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-2 {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-3 {
+    background: linear-gradient(90deg, #0369a1 0%, #0284c7 33%, #0ea5e9 66%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Radial Spotlight Gradient */
+  .spotlight-gradient {
+    background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.3) 0%, transparent 70%),
+                linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+  }
+
+  /* Card Gradients with Depth */
+  .card-gradient {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 249, 255, 0.8) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(14, 165, 233, 0.1);
+  }
+
+  .card-gradient-hover {
+    @apply hover:bg-gradient-to-br hover:from-medical-50 hover:via-cyan-50 hover:to-blue-50 transition-all duration-300;
+  }
+
+  /* Mesh Gradient Overlay */
+  .mesh-overlay {
+    position: relative;
+  }
+
+  .mesh-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(at 30% 20%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
+                radial-gradient(at 70% 80%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
+    pointer-events: none;
   }
 }
 

@@ -13,7 +13,7 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Patient <span className="text-gradient">Testimonials</span>
+            Patient <span className="text-gradient-2">Testimonials</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Hear from our satisfied patients about their recovery journey
@@ -28,7 +28,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-gradient-to-br from-medical-50 to-cyan-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow relative"
+              className="glass-card-blue rounded-xl p-6 hover:shadow-xl transition-shadow relative"
             >
               <Quote className="absolute top-4 right-4 text-medical-200" size={40} />
               

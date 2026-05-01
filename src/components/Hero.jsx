@@ -11,7 +11,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative gradient-bg overflow-hidden">
+    <section className="relative spotlight-gradient overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 opacity-5"
@@ -41,7 +41,7 @@ const Hero = () => {
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Quality Healthcare
-              <span className="text-gradient block">At Your Doorstep</span>
+              <span className="text-gradient-3 block">At Your Doorstep</span>
             </h1>
             
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">

@@ -7,14 +7,14 @@ const ContactPage = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="gradient-bg py-16">
+      <section className="gradient-bg-3 py-16">
         <div className="container-custom text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
           >
-            Contact <span className="text-gradient">Us</span>
+            Contact <span className="text-gradient-2">Us</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

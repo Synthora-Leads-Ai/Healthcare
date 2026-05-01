@@ -29,14 +29,14 @@ const AboutPage = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="gradient-bg py-16">
+      <section className="gradient-bg-3 py-16">
         <div className="container-custom text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
           >
-            About <span className="text-gradient">Us</span>
+            About <span className="text-gradient-3">Us</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ const AboutPage = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white mesh-overlay">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -125,7 +125,7 @@ const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className="section-padding gradient-bg">
+      <section className="section-padding gradient-bg-2">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
