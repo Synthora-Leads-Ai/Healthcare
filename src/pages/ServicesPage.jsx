@@ -12,12 +12,21 @@ const iconMap = {
 };
 
 const serviceImages = {
-  'Orthopaedic Physiotherapy': 'https://th.bing.com/th/id/OIP.iNMXGJMvVyZeq_I6MeR3ewHaEq?w=290&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
-  'Neuro Physiotherapy': 'https://resalahphysio.com/wp-content/uploads/2023/07/image_50394881-2048x1536.jpg',
-  'Cardiovascular & Pulmonary': 'https://www.thoughtco.com/thmb/9gogytcZZpPql39K9EUVaegurbA=/1500x997/filters:fill(auto,1)/circulatory_system-56e73fe45f9b5854a9f962fc.jpg',
-  'Sports Physiotherapy': 'https://images.pexels.com/photos/5794060/pexels-photo-5794060.jpeg?auto=compress&cs=tinysrgb&w=800',
-  'Pain Management': 'https://images.pexels.com/photos/6129049/pexels-photo-6129049.jpeg?auto=compress&cs=tinysrgb&w=800',
-  'Paediatric & Developmental': 'https://th.bing.com/th/id/OIP.3c4hOtKzmSU7mMb_ZZvAOQHaFj?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3'
+  'Orthopaedic Physiotherapy': '/images/services/ortho.jpg',
+  'Neuro Physiotherapy': '/images/services/neuro.jpg',
+  'Cardiovascular & Pulmonary': '/images/services/cardio.jpg',
+  'Sports Physiotherapy': '/images/services/sports.jpg',
+  'Pain Management': '/images/services/pain.jpg',
+  'Paediatric & Developmental': '/images/services/paediatric.jpg'
+};
+
+const homeHealthcareImages = {
+  'Home Physiotherapy': '/images/services/home-physio.jpg',
+  'Home Nursing Care': '/images/services/home-nursing.jpg',
+  'Trained Attendants': '/images/services/attendant.jpg',
+  'Elder Care Services': '/images/services/elder-care.jpg',
+  'Doctor Home Visits': '/images/services/doctor-visit.jpg',
+  'Babysitter / Child Care': '/images/services/child-care.jpg'
 };
 
 const getPlaceholderImage = (text, color) => {
@@ -121,23 +130,31 @@ const ServicesPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 bg-cyan-100 rounded-lg flex items-center justify-center">
-                      <Icon className="text-cyan-600" size={28} />
+                  <img 
+                    src={homeHealthcareImages[service.title]}
+                    alt={service.title}
+                    className="w-full h-56 object-cover hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-14 h-14 bg-cyan-100 rounded-lg flex items-center justify-center">
+                        <Icon className="text-cyan-600" size={28} />
+                      </div>
+                      <h3 className="font-bold text-xl text-gray-900">{service.title}</h3>
                     </div>
-                    <h3 className="font-bold text-xl text-gray-900">{service.title}</h3>
+                    <p className="text-gray-700 mb-4">{service.description}</p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
+                          <ChevronRight className="text-cyan-600 flex-shrink-0 mt-0.5" size={16} />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <p className="text-gray-700 mb-4">{service.description}</p>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                        <ChevronRight className="text-cyan-600 flex-shrink-0 mt-0.5" size={16} />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </motion.div>
               );
             })}

@@ -20,12 +20,21 @@ const iconMap = {
 };
 
 const serviceImages = {
-  'Orthopaedic Physiotherapy': 'https://th.bing.com/th/id/OIP.iNMXGJMvVyZeq_I6MeR3ewHaEq?w=290&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
-  'Neuro Physiotherapy': 'https://resalahphysio.com/wp-content/uploads/2023/07/image_50394881-2048x1536.jpg',
-  'Cardiovascular & Pulmonary': 'https://www.thoughtco.com/thmb/9gogytcZZpPql39K9EUVaegurbA=/1500x997/filters:fill(auto,1)/circulatory_system-56e73fe45f9b5854a9f962fc.jpg',
-  'Sports Physiotherapy': 'https://images.pexels.com/photos/5794060/pexels-photo-5794060.jpeg?auto=compress&cs=tinysrgb&w=800',
-  'Pain Management': 'https://images.pexels.com/photos/6129049/pexels-photo-6129049.jpeg?auto=compress&cs=tinysrgb&w=800',
-  'Paediatric & Developmental': 'https://th.bing.com/th/id/OIP.3c4hOtKzmSU7mMb_ZZvAOQHaFj?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3'
+  'Orthopaedic Physiotherapy': '/images/services/ortho.jpg',
+  'Neuro Physiotherapy': '/images/services/neuro.jpg',
+  'Cardiovascular & Pulmonary': '/images/services/cardio.jpg',
+  'Sports Physiotherapy': '/images/services/sports.jpg',
+  'Pain Management': '/images/services/pain.jpg',
+  'Paediatric & Developmental': '/images/services/paediatric.jpg'
+};
+
+const homeHealthcareImages = {
+  'Home Physiotherapy': '/images/services/home-physio.jpg',
+  'Home Nursing Care': '/images/services/home-nursing.jpg',
+  'Trained Attendants': '/images/services/attendant.jpg',
+  'Elder Care Services': '/images/services/elder-care.jpg',
+  'Doctor Home Visits': '/images/services/doctor-visit.jpg',
+  'Babysitter / Child Care': '/images/services/child-care.jpg'
 };
 
 // Fallback placeholder generator
@@ -83,7 +92,6 @@ const Services = () => {
                     alt={service.category}
                     className="w-full h-48 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
-                    crossOrigin="anonymous"
                     onError={(e) => {
                       console.log('Image failed, using placeholder:', service.category);
                       e.target.src = servicePlaceholders[service.category];
@@ -129,8 +137,14 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="card group hover:border-cyan-200 border-2 border-transparent"
+                  className="card group hover:border-cyan-200 border-2 border-transparent overflow-hidden"
                 >
+                  <img 
+                    src={homeHealthcareImages[service.title]}
+                    alt={service.title}
+                    className="w-full h-48 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center group-hover:bg-cyan-600 transition-colors">
                       <Icon className="text-cyan-600 group-hover:text-white transition-colors" size={24} />
